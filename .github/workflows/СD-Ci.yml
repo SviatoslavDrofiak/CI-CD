@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check secret
-        run: echo "User is ${{ sercerts.USERNAME}}"
+        run: echo "User is ${{SECRET_NAME_1}}"
 
       - name: install dependencies
         run: pip install -r requirements.txt
