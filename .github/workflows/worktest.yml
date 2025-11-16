@@ -10,25 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Клонуємо репозиторій
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # (опціонально) Встановлення Python, Node.js або Java
-      # - name: Setup Python
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.10'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-      # Встановлюємо залежності (Python-приклад)
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      # Збірка проєкту
       - name: Build project
-        run: echo "Building the project..."
+        run: echo "Building..."
 
-      # Запуск юніт-тестів
       - name: Run unit tests
         run: pytest
